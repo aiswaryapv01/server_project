@@ -7,7 +7,7 @@ const axios = require('axios');
 app.use(express.json())
 app.use(cors())
 const bcrypt = require('bcryptjs');
-
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect("mongodb+srv://nehaanil753:pOLAqsKIov7T7a2U@cluster0.k8l9hzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
@@ -226,6 +226,6 @@ app.get('/getUserName', async (req, res) => {                                   
 
 
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log("server is running")
 })
