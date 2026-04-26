@@ -18,6 +18,11 @@ mongoose.connect("mongodb+srv://nehaanil753:pOLAqsKIov7T7a2U@cluster0.k8l9hzx.mo
   });
 
 
+app.get("/",(req,res)=>{
+  res.send("Backend is running");
+});
+
+
   app.post("/login",(req,res) => {
     const {email,password}= req.body;
     StudentModel.findOne({email: email})
@@ -222,9 +227,7 @@ app.get('/getUserName', async (req, res) => {                                   
 
 //
 
-app.get("/",(req,res)=>{
-  res.send("Backend is running");
-});
+
 
 
 
